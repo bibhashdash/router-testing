@@ -9,6 +9,7 @@ import About from "./routes/About";
 import Contact from "./routes/Contact";
 import Posts from "./routes/Posts";
 import Post from "./routes/Post";
+import PostsIndex from "./routes/PostsIndex";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,10 +20,13 @@ root.render(
           <Route path="/about" element={<About />} />
           <Route path="/activities" element={<Activities />} />
           <Route path="/posts" element={<Posts />}>
+            <Route index element={<PostsIndex />}/>
             <Route path=":id" element={<Post />} />
+            <Route path="*" element={<h2>No post here</h2>} />
           </Route>
+          
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<h2>No post here</h2>} />
+          
         </Route>
       </Routes>
     </BrowserRouter>
