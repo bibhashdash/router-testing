@@ -1,19 +1,26 @@
 import { Link } from "react-router-dom";
 import { getPosts } from "../data";
-const PostsIndex = ()=> {
-    let posts = getPosts();
-    return (
-        <div>
-            <h1>Welcome to my blog posts</h1>
-            <ul>
-          {posts.map((post) => (
+import "./PostsIndex.css";
+import Card from "../UI/Card";
+const PostsIndex = () => {
+  let posts = getPosts();
+  return (
+    <div className="posts-index-container">
+      <h1>Welcome to my blog posts</h1>
+      <ul className="posts-grid">
+        {posts.map((post) => (
+          <Card>
             <Link to={`/posts/${post.id}`} key={post.id}>
-              <li>{post.title}</li>
+              <li>
+                <h3>{post.title}</h3>
+                <p>{post.body.slice(0, 100)}...</p>
+              </li>
             </Link>
-          ))}
-        </ul>
-        </div>
-    )
-}
+          </Card>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-export default PostsIndex
+export default PostsIndex;

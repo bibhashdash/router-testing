@@ -1,12 +1,8 @@
 import { Outlet } from "react-router-dom";
 
 const Posts = () => {
- 
-
   return (
-    <div>
-      
-      
+    <div className="page">
       <Outlet />
     </div>
   );
