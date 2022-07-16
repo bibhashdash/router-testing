@@ -1,9 +1,10 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 const Activities = () => {
   return (
     <div className="page">
-      <h1>Welcome to the Activities page</h1>
+      <Outlet />
     </div>
   );
 };

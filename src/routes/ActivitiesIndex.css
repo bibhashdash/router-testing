@@ -1,0 +1,24 @@
+.activities-index-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media only screen and (max-width: 480px) {
+  .activities-grid {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 2rem;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}

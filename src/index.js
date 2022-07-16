@@ -10,6 +10,8 @@ import Contact from "./routes/Contact";
 import Posts from "./routes/Posts";
 import Post from "./routes/Post";
 import PostsIndex from "./routes/PostsIndex";
+import ActivitiesIndex from "./routes/ActivitiesIndex";
+import Activity from "./routes/Activity";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,15 +20,18 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/about" element={<About />} />
-          <Route path="/activities" element={<Activities />} />
+          <Route path="/activities" element={<Activities />}>
+            <Route index element={<ActivitiesIndex />} />
+            <Route path=":id" element={<Activity />} />
+            <Route path="*" element={<h2>No post here</h2>} />
+          </Route>
           <Route path="/posts" element={<Posts />}>
-            <Route index element={<PostsIndex />}/>
+            <Route index element={<PostsIndex />} />
             <Route path=":id" element={<Post />} />
             <Route path="*" element={<h2>No post here</h2>} />
           </Route>
-          
+
           <Route path="/contact" element={<Contact />} />
-          
         </Route>
       </Routes>
     </BrowserRouter>

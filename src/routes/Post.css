@@ -1,0 +1,10 @@
+.likes-container {
+  margin-top: 1rem;
+  width: 140px;
+  display: flex;
+  justify-content: space-between;
+}
+.likes-counter {
+  display: flex;
+  gap: 10px;
+}

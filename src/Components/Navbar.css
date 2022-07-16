@@ -7,3 +7,12 @@ nav ul {
   display: flex;
   justify-content: space-between;
 }
+.pill {
+  border-radius: 20px;
+  border: 2px solid rgb(93, 93, 93);
+  padding: 10px 20px;
+  /* width: 100%; */
+  text-align: center;
+  /* margin: 0 10px; */
+  cursor: pointer;
+}
